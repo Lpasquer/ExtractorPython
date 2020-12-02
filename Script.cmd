@@ -1,16 +1,13 @@
-call echo "Execution des extracteurs Java (HTML puis Wikitext)"
+cd C:\Users\Admin\Documents\GitHub\PDLProject
 
-call mvn compile -f "C:\Users\Admin\Documents\PDL\PDLProject-master"
+mvn install
 
-call mvn package -f "C:\Users\Admin\Documents\PDL\PDLProject-master" 
+mvn compile
 
-cd "C:\Users\Admin\Documents\PDL\PDLProject-master"
+call java -cp "target/WikipediaMatrix-1.0-SNAPSHOT.jar" pdl/wiki/WikipediaMatrix
 
-call echo "Appel de l’extracteur Java HTML"
+cd C:\Users\Admin\Documents\GitHub\ExtractorPython
 
-call java -cp "target/WikipediaMatrix-1.0-SNAPSHOT.jar" fr.istic.HTMLExtractor
+call extracteur.py
 
-call echo "Appel de l’extracteur Java Wikitext"
-
-call java -cp target/WikipediaMatrix-1.0-SNAPSHOT.jar " fr.istic.WikiTextExtractor
 
