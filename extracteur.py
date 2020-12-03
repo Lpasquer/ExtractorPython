@@ -54,8 +54,8 @@ def save_to_csv(table_name, rows):
 def wikipedia_extractor(url): #extractor of one url
     tables = recup_tableau(url)
     if tables is not None:
-        for i, table in enumerate(tables, start = 1):
-            table_name = f"{url[30:]}_{i}" #delete the prefix of wikipedia
+        for i, table in enumerate(tables, start = 0):
+            table_name = f"{url[30:]}-{i}" #delete the prefix of wikipedia
             rows = get_table_rows(table)
             save_to_csv(table_name, rows)
 
