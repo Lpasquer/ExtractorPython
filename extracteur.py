@@ -48,7 +48,7 @@ def save_to_csv(table_name, rows):
     dircsv = './output'
     if not os.path.exists(dircsv): #we check if the directory output exists
         os.mkdir(dircsv) #if not, we create one
-    pd.DataFrame(rows).to_csv(f"output/{table_name}.csv",encoding='utf-8') #use of pandas library
+    pd.DataFrame(rows).to_csv(f"output/{table_name}.csv",encoding='utf-8'index = False, header = False) #use of pandas library
 
 
 def wikipedia_extractor(url): #extractor of one url
