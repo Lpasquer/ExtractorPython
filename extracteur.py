@@ -50,6 +50,12 @@ def save_to_csv(table_name, rows):
         os.mkdir(dircsv) #if not, we create one
     pd.DataFrame(rows).to_csv(f"output/{table_name}.csv",encoding='utf-8'index = False, header = False) #use of pandas library
 
+def save_to_csv_to_check(table_name, rows):
+    dircsv = './Csv_to_check'
+    if not os.path.exists(dircsv): #we check if the directory output exists
+        os.mkdir(dircsv) #if not, we create one
+    pd.DataFrame(rows).to_csv(f"Csv_to_check/{table_name}.csv",encoding='utf-8', index = False, header=False) #use of pandas library
+
 
 def wikipedia_extractor(url): #extractor of one url
     tables = recup_tableau(url)
@@ -59,11 +65,27 @@ def wikipedia_extractor(url): #extractor of one url
             rows = get_table_rows(table)
             save_to_csv(table_name, rows)
 
+def ground_truth_extractor(url): #same fonction but calling save_tocsv_gt
+    tables = recup_tableau(url)
+    if tables is not None:
+        for i, table in enumerate(tables, start = 0):
+            table_name = f"{url[30:]}-{i}"
+            rows = get_table_rows(table)
+            save_to_csv_gt(table_name, rows)
+
+
 def extractor(urls): #extractor of a list of url
     list_url = recup_liste_url(urls)
     for url in list_url:
         wikipedia_extractor(url)
 
+def extractor_ground_truth(urls):
+    list_url = recup_liste_url(urls)
+    for url in list_url:
+        ground_truth_extractor(url)
+
 if __name__ == "__main__":
     urls = "wikiurls.txt"
+    ground_truth_urls = "Ground_truth_urls.txt"
     extractor(urls)
+    extractor_ground_truth(ground_truth_urls)
