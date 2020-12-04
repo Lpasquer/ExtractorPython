@@ -18,7 +18,7 @@ Une fois la ligne cd modifiée, on peut exécuter le script en double cliquant d
 
 Il est nécessaire de cloner l'ensemble du projet actuel : "https://github.com/Lpasquer/ExtractorPython".
 
-Il faut par la suite modifier la commande cd comme pour le premier script "cd VotreDisque:Votre\Répertoire\Du\Projet\Java" avec par exemple : "cd C:\Users\Admin\Documents\GitHub\ExtractorPython"
+Il faut par la suite modifier la commande cd comme pour le premier script "cd VotreDisque:Votre\Répertoire\Du\Projet\Python" avec par exemple : "cd C:\Users\Admin\Documents\GitHub\ExtractorPython"
 Pour se faire : Clic droit -> Modifier -> Remplacer la ligne cd.
 
 Une fois la ligne cd modifiée, on peut exécuter le script en double cliquant dessus.
