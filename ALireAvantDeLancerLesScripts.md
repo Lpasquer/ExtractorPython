@@ -1,5 +1,10 @@
 # A lire avant de lancer les scripts
 
+# Prérequis
+  Installation des variables d'environnement :
+   - Java
+   - Maven
+
 # SCRIPT JAVA
 
 Il est nécessaire de cloner le projet de l'année dernière qui comprends les 2 extracteurs Java à cette adresse "https://github.com/Nrkz/PDLProject".
