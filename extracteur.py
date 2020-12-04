@@ -48,7 +48,7 @@ def save_to_csv(table_name, rows):
     dircsv = './output'
     if not os.path.exists(dircsv): #we check if the directory output exists
         os.mkdir(dircsv) #if not, we create one
-    pd.DataFrame(rows).to_csv(f"output/{table_name}.csv",encoding='utf-8'index = False, header = False) #use of pandas library
+    pd.DataFrame(rows).to_csv(f"output/{table_name}.csv",encoding='utf-8',index = False, header = False) #use of pandas library
 
 def save_to_csv_to_check(table_name, rows):
     dircsv = './Csv_to_check'
@@ -71,7 +71,7 @@ def ground_truth_extractor(url): #same fonction but calling save_tocsv_gt
         for i, table in enumerate(tables, start = 0):
             table_name = f"{url[30:]}-{i}"
             rows = get_table_rows(table)
-            save_to_csv_gt(table_name, rows)
+            save_to_csv_to_check(table_name, rows)
 
 
 def extractor(urls): #extractor of a list of url
